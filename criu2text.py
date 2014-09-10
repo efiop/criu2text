@@ -37,9 +37,8 @@ def img2text(fin):
 
             # Write text representation of
             # pb message into num file
-            fout = open(str(num), 'w+')
-            google.protobuf.text_format.PrintMessage(pb, fout)
-            fout.close()
+            with open(str(num), 'w+') as fout:
+                google.protobuf.text_format.PrintMessage(pb, fout)
 
             num += 1
             # pagemap.img is a special one. It starts with
