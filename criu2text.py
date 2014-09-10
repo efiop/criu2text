@@ -54,9 +54,8 @@ def img2text(fin):
 
 def text2img(fout):
     # Open magic file to get magic cookie
-    fin = open("magic", 'r')
-    cookie = fin.read()
-    fin.close()
+    with open("magic", 'r') as fin:
+        cookie = fin.read()
 
     if cookie in images.pb.keys():
         # Write magic cookie into img file
@@ -75,9 +74,8 @@ def text2img(fout):
 
             # Read pb message int text format from
             # file num
-            fin = open(str(num), 'r')
-            pb_text = fin.read()
-            fin.close()
+            with open(str(num), 'r') as fin:
+                pb_text = fin.read()
 
             # Parse pb from text format and write
             # it to img file
