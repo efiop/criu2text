@@ -1,0 +1,35 @@
+criu2text
+
+criu images to/from google protobuf text format.
+
+Build:
+     Specify PROTOBUF_DIR, MAGIC_C_HEADER and CRIU
+     variables in Makefile if you are building
+     criu2text not from criu/tools/criu2text.
+
+     Run:
+        make
+     to generate magic.py and compile needed
+     protobuf messages.
+     Run:
+        make test
+     to dump simple loop and convert it's images
+     to text and back and compare them bit by bit.
+     Run:
+        make clean
+     to cleanup.
+
+Usage: criu2text to-text IMG_IN [WORK_DIR]
+       criu2text to-img TEXT_DIR_IN [WORK_DIR]
+
+Examples:
+     1) $ criu2text to-text core-1234.img text_imgs_dir
+        $ ls text_imgs_dir
+          core-1234
+        $ ls text_imgs_dir/core-1234
+          0
+          magic
+
+     2) $ criu2text to-img text_imgs_dir/core-1234 imgs_dir
+        $ ls imgs_dir
+          core-1234.img
