@@ -1,5 +1,7 @@
 criu2text
 
+NOTE: My CRIT(CRiu Image Tool) patches are now merged into official criu repo, so there is no need in criu2text anymore.
+
 criu images to/from google protobuf text format.
 
 Build:
